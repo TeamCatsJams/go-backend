@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"telmed_backend/db"
 	"telmed_backend/models"
 	"telmed_backend/schemas"
@@ -23,7 +24,7 @@ func CreateAppointment(c *fiber.Ctx) error {
 	}
 	appointment := models.Appointment{
 		AppointmentAt: data.AppointmentAt,
-		MeetLink:      data.MeetLink,
+		MeetLink:      fmt.Sprintf("https://meet.jit.si/telmed/%s/%s", data.DoctorID.String(), user.ID.String()),
 		DoctorID:      &data.DoctorID,
 		UserID:        &user.ID,
 	}
