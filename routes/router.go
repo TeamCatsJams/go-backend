@@ -1,8 +1,10 @@
 package routes
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+)
 
-func MountRoutes(app *fiber.App){
+func MountRoutes(app *fiber.App) {
 	app.Get("/api", func(c *fiber.Ctx) error { return c.SendString("Hello world, routes mounted!!") }) // logged in browers /api,if MountRoutes run
 	//api routeObject group
 	api := app.Group("/api") // api group
@@ -13,5 +15,6 @@ func MountRoutes(app *fiber.App){
 	//main routes
 	_ = v1.Group("/user") //api/v1/user
 
-	
+	doctorRoute := v1.Group("/doctor")
+	doctorRouter(doctorRoute)
 }

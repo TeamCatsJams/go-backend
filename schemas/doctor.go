@@ -3,7 +3,7 @@ package schemas
 type DoctorData struct {
 	FullName        string   `json:"full_name"`
 	Language        string   `json:"language"`
-	Email           string   `json:"email" gorm:"unique"`
+	Email           string   `json:"email"`
 	Phone           string   `json:"phone"`
 	MeetingDuration string   `json:"meeting_duration"`
 	Description     string   `json:"description"`
