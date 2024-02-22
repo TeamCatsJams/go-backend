@@ -10,6 +10,4 @@ type Appointment struct {
 	MeetLink      string     `json:"meet_link"`
 	UserID        *uuid.UUID `json:"user_id"`
 	DoctorID      *uuid.UUID `json:"doctor_id"`
-
-	//Appointments []Document `json:"documents" gorm:"foreignKey:UserID;default:null"`
 }
