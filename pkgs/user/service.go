@@ -14,18 +14,18 @@ type userSvc struct {
 }
 
 func (s *userSvc) FetchProfileByEmail(email string) (*models.User, error) {
-	panic("unimplemented")
+	return s.repo.FetchProfileByEmail(email)
 }
 
 func (s *userSvc) CreateUser(user *models.User) (*models.User, error) {
-	panic("unimplemented")
+	return s.repo.CreateUser(user)
 }
 func (s *userSvc) FetchOrCreateUser(user *models.User) (*models.User, error) {
-	panic("unimplemented")
+	return s.repo.FetchOrCreateUser(user)
 }
 
 func (s *userSvc) FetchProfileById(id string) (*models.User, error) {
-	panic("unimplemented")
+	return s.repo.FetchProfileById(id)
 }
 
 func NewService(r Repository) Service {
