@@ -12,20 +12,20 @@ import (
 
 func CreatePrescription(c *fiber.Ctx) error {
 	var data schemas.PrescriptionData
-	userEmail := c.Locals("userEmail").(string)
+	doctorEmail := c.Locals("userEmail").(string)
 	if err := c.BodyParser(&data); err != nil {
 		return views.BadRequest(c)
 	}
 
-	user, err := db.UserSvc.FetchProfileByEmail(userEmail)
+	doctor, err := db.DoctorSvc.FetchProfileByEmail(doctorEmail)
 	if err != nil {
 		return views.InternalServerError(c, err)
 	}
 	Prescription := models.Prescription{
 		Title:    data.Title,
 		Document: data.Document,
-		DoctorID: data.DoctorID,
-		UserID:   &user.ID,
+		DoctorID: &doctor.ID,
+		UserID:   data.UserID,
 	}
 	newPrescription, err := db.PrescriptionSvc.CreatePrescription(&Prescription)
 	if err != nil {
