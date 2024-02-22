@@ -3,13 +3,15 @@ package db
 import (
 	"telmed_backend/pkgs/appointment"
 	"telmed_backend/pkgs/doctor"
+	"telmed_backend/pkgs/prescription"
 	"telmed_backend/pkgs/user"
 )
 
 var (
-	UserSvc        user.Service        = nil
-	DoctorSvc      doctor.Service      = nil
-	AppointmentSvc appointment.Service = nil
+	UserSvc         user.Service         = nil
+	DoctorSvc       doctor.Service       = nil
+	AppointmentSvc  appointment.Service  = nil
+	PrescriptionSvc prescription.Service = nil
 	// services
 )
 

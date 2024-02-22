@@ -17,4 +17,10 @@ func MountRoutes(app *fiber.App) {
 
 	doctorRoute := v1.Group("/doctor")
 	doctorRouter(doctorRoute)
+
+	appointmentRoute := v1.Group("/appointment")
+	appointmentRouter(appointmentRoute)
+
+	prescriptionRoute := v1.Group("/prescription")
+	prescriptionRouter(prescriptionRoute)
 }
