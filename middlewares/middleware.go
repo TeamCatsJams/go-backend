@@ -28,6 +28,10 @@ func CoreAuth(c *fiber.Ctx, isPartialAuth bool) error {
 	}
 
 	userEmail := claims["email"].(string)
+	userName := claims["name"].(string)
+	userAvatar := claims["picture"].(string)
 	c.Locals("userEmail", userEmail)
+	c.Locals("userName", userName)
+	c.Locals("userAvatar", userAvatar)
 	return c.Next()
 }

@@ -13,7 +13,8 @@ func MountRoutes(app *fiber.App) {
 	v1 := api.Group("/v1") // /api/v1 group
 
 	//main routes
-	_ = v1.Group("/user") //api/v1/user
+	userRoute := v1.Group("/user") //api/v1/user
+	userRouter(userRoute)
 
 	doctorRoute := v1.Group("/doctor")
 	doctorRouter(doctorRoute)
