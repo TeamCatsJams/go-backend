@@ -26,7 +26,7 @@ func GetDB() *gorm.DB {
 func Connect() (*gorm.DB, error) {
 	db, err := gorm.Open(postgres.Open(config.DB_URI), &gorm.Config{})
 	if err != nil {
-		log.Println("Error coonection to db", err)
+		log.Println("Error connection to db", err)
 		return nil, err
 	}
 	log.Println("Connected to cockroach")
